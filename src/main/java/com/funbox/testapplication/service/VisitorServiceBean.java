@@ -53,6 +53,14 @@ public class VisitorServiceBean implements VisitorService {
             domains = domains.entrySet().stream()
                     .filter(v -> v.getValue() >= from && v.getValue() <= to)
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        } else if (from != null){
+            domains = domains.entrySet().stream()
+                    .filter(v -> v.getValue() >= from)
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        }else if (to != null){
+            domains = domains.entrySet().stream()
+                    .filter(v -> v.getValue() <= to)
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         }
 
         return new DomainsDto(new ArrayList<>(domains.keySet()));
