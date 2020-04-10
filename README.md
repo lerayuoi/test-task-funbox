@@ -8,16 +8,13 @@ https://funbox.ru/qt/java.pdf
 
     ``` ./gradlew clean build ```
 
-    ``` docker-compose build ```
-
 - Выполните команду для запуска контейнера redis:
 
     ``` docker-compose up ```
+    
 - Проверить создание контейнера можно командой ``` docker ps ```.
 
-- Запустите spring-boot приложение командой: 
-
-    ``` java -jar demo-0.0.1-SNAPSHOT. jar ```
+- Запустите класс RunApplication.java.
 
 Теперь приложение доступно по адресу http://localhost:8081.
 Конфигурационные параметры можно задать в файле application.properties
